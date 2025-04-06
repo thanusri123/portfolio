@@ -1,0 +1,37 @@
+/* css/main.css */
+:root {
+    --primary-color: #0d6efd; /* Bootstrap Blue */
+    --secondary-color: #6c757d; /* Bootstrap Gray */
+    --light-bg: #f8f9fa; /* Bootstrap Light Gray */
+    --dark-text: #212529; /* Bootstrap Dark */
+    --section-padding: 4rem 0; /* Padding for sections */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--dark-text);
+    display: flex; /* Needed for sticky footer */
+    flex-direction: column; /* Needed for sticky footer */
+    min-height: 100vh; /* Needed for sticky footer */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+main {
+    flex-grow: 1; /* Allows main content to push footer down */
+}
+
+/* Style for active nav link (add more styling as needed) */
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: var(--primary-color) !important; /* Use important to override Bootstrap */
+}
+
+
+.job-card, .edu-card, .project-card, .blog-card {
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--primary-color); /* Simple accent */
+}
