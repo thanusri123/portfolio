@@ -1,37 +1,407 @@
 /* css/main.css */
 :root {
-    --primary-color: #0d6efd; /* Bootstrap Blue */
-    --secondary-color: #6c757d; /* Bootstrap Gray */
-    --light-bg: #f8f9fa; /* Bootstrap Light Gray */
-    --dark-text: #212529; /* Bootstrap Dark */
-    --section-padding: 4rem 0; /* Padding for sections */
+    /* === COLOR PALETTE === */
+    --primary-color: #4A55A2; /* Indigo */
+    --primary-rgb: 74, 85, 162;
+    --secondary-color: #6c757d; /* Gray */
+    --secondary-rgb: 108, 117, 125;
+    --accent-color: #FF896A; /* Coral */
+    --accent-rgb: 255, 137, 106;
+    --bg-light-shade: #F8F7FC; /* Very light lavender/gray tint */
+    --bg-white-shade: #FFFFFF; /* Pure white */
+    --dark-text: #343a40;
+    --muted-text: #6c757d;
+    --light-border: #e3e3f3;
+}
+
+/* === Base & Typography === */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     color: var(--dark-text);
-    display: flex; /* Needed for sticky footer */
-    flex-direction: column; /* Needed for sticky footer */
-    min-height: 100vh; /* Needed for sticky footer */
+    background-color: var(--bg-light-shade);
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
+    /* color: var(--primary-color); Remove this if headings should be dark text like original */
 }
 
 main {
-    flex-grow: 1; /* Allows main content to push footer down */
+    flex-grow: 1;
 }
 
-/* Style for active nav link (add more styling as needed) */
-.navbar-nav .nav-link.active {
-    font-weight: bold;
-    color: var(--primary-color) !important; /* Use important to override Bootstrap */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+a:hover {
+  color: #3a438a;
+  text-decoration: underline;
+}
+/* Prevent headings from inheriting link color by default */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+     color: inherit;
+     text-decoration: none;
+}
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+     color: var(--primary-color);
+     text-decoration: underline;
+}
+
+/* === Sections === */
+.section-bg-white {
+    background-color: var(--bg-white-shade);
+}
+.section-bg-light {
+    background-color: var(--bg-light-shade);
+}
+/* Padding applied via inner divs like .skills-section, .work-experience-section, etc. */
+
+
+/* === Header / Navigation === */
+header {
+     /* The sticky-top class handles positioning */
+     z-index: 1030; /* Ensure it's above other content */
+}
+.navbar {
+    background-color: var(--bg-white-shade) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Original Nav Styling Integration */
+.site-title {
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+}
+.site-title a.navbar-brand { /* Target the bootstrap class within */
+    color: var(--dark-text) !important; /* Match original dark text */
+    font-weight: 600;
+}
+
+.site-nav .nav-link { /* Target bootstrap class within */
+  padding: 0; /* From original */
+  font-size: 1rem; /* Adjusted from original 1.25rem */
+  line-height: 2.5rem; /* From original */
+  color: rgba(0, 0, 0, 0.5); /* From original */
+  transition: color 0.2s ease-in-out;
+  margin: 0 0.5rem;
+  font-weight: 500;
+}
+
+.site-nav .nav-link:hover,
+.site-nav .nav-link:focus,
+.site-nav .nav-link.active { /* .active added */
+  color: rgba(0, 0, 0, 0.8) !important; /* From original, using !important to override BS */
+  font-weight: bold; /* Keep bold for active */
+}
+
+/* Spacing between nav items (from original) */
+.site-nav .nav-item + .nav-item {
+  margin-left: 1rem;
+}
+
+/* Navbar social icons */
+.navbar .fab, .navbar .fas {
+     color: var(--secondary-color);
+     transition: color 0.2s ease-in-out;
+     font-size: 1.1rem; /* Slightly larger */
+}
+.navbar .fab:hover, .navbar .fas:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive adjustments from original */
+@media (min-width: 992px) { /* Corresponds to Bootstrap lg breakpoint */
+  .site-title {
+    /* float: left; Not needed with flexbox */
+  }
+  .site-nav {
+    /* float: right; Not needed with flexbox */
+  }
+}
+
+/* === Cover Section (Adapted from Original) === */
+.cover {
+  border-radius: 10px;
+  background-color: var(--bg-white-shade); /* Base color for the container */
+}
+
+.cover-bg {
+  /* background-color: rgba(53, 97, 108, 0.73); Replaced with CSS var */
+  background-color: rgba(var(--primary-rgb), 0.85); /* Use RGBA of primary color */
+
+  /* Updated SVG background pattern with white fill and adjusted opacity */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.08'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  border-radius: 10px 10px 0 0; /* Keep rounding */
+}
+
+.avatar {
+  /* max-width: 216px; Max width set by img width attribute */
+  /* max-height: 216px; Max height set by img height attribute */
+  margin-top: 20px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Original grayscale effect */
+.avatar img {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out;
+}
+.avatar:hover img {
+    filter: grayscale(0%); /* Remove grayscale on hover */
 }
 
 
-.job-card, .edu-card, .project-card, .blog-card {
-    margin-bottom: 1.5rem;
-    border-left: 4px solid var(--primary-color); /* Simple accent */
+@media (min-width: 768px) { /* Use Bootstrap 'md' breakpoint */
+   .avatar {
+    margin-bottom: -80px; /* Pulls avatar down */
+    margin-left: 0;
+    margin-right: 0; /* Align left on larger screens */
+  }
+  .about-section {
+      padding-top: 6.5rem !important; /* Add top padding when avatar overlaps */
+  }
+}
+
+/* === Skills Section === */
+#skills .progress {
+    height: 20px;
+    font-size: 0.8em;
+    background-color: #e9ecef;
+    border-radius: 5px;
+}
+/* Colors for progress bars */
+#skills .progress-bar.bg-primary {
+    background-color: var(--primary-color) !important;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+}
+#skills .progress-bar.bg-success {
+    background-color: var(--accent-color) !important;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* === Timeline custom component (Adapted from Original) === */
+.timeline {
+  border-left: 2px solid var(--light-border); /* Use light border color */
+  padding: 1rem 0;
+  margin-left: 10px; /* Adjusted margin */
+ }
+
+.timeline-card {
+  position: relative;
+  margin-left: 31px;
+  border-left: 2px solid; /* Color set by specific classes */
+  margin-bottom: 2rem;
+  padding-left: 20px; /* Add padding so content doesn't touch line */
+  border-radius: 0; /* Override card radius for timeline look */
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+  background: transparent; /* Make card background transparent */
+  box-shadow: none !important; /* Remove shadow for timeline */
+}
+.timeline-card:hover {
+    transform: none; /* Disable hover transform for timeline */
+}
+
+.timeline-card:last-child {
+  margin-bottom: 1rem;
+}
+
+.timeline-card:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  background-color: var(--bg-white-shade); /* Use bg color */
+  border-radius: 50%; /* Make it round */
+  width: 12px;
+  height: 12px;
+  top: 20px; /* Adjust vertical position if needed */
+  left: -41px; /* Adjust horizontal position */
+  border: 2px solid; /* Color set by specific classes */
+  z-index: 2;
+ }
+
+.timeline-card:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  background-color: currentColor; /* Color set by specific classes */
+  width: 29px;
+  height: 2px;
+  top: 25px; /* Adjust vertical position */
+  left: -29px; /* Adjust horizontal position */
+  z-index: 1;
+ }
+
+/* Timeline Colors using CSS Variables */
+.timeline-card-primary {
+  border-left-color: var(--primary-color);
+  color: var(--primary-color); /* Sets color for :after background */
+}
+.timeline-card-primary:before {
+  border-color: var(--primary-color);
+}
+
+.timeline-card-success {
+  border-left-color: var(--accent-color);
+  color: var(--accent-color); /* Sets color for :after background */
+}
+.timeline-card-success:before {
+  border-color: var(--accent-color);
+}
+/* Keep card body content dark */
+.timeline-card .card-body {
+    color: var(--dark-text);
+    padding: 0; /* Remove card-body padding */
+    border: none; /* Remove any nested borders */
+}
+.timeline-card .card-body .h5,
+.timeline-card .card-body .h6 {
+    color: var(--dark-text); /* Ensure headings inside are dark */
+}
+.timeline-card .card-body .text-muted {
+    color: var(--muted-text) !important;
+}
+
+
+/* === Cards (Non-Timeline: Projects, Blog) === */
+.card:not(.timeline-card) { /* Style cards not part of the timeline */
+    border: 1px solid var(--light-border);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--bg-white-shade);
+}
+.card:not(.timeline-card):hover {
+   transform: translateY(-5px);
+   box-shadow: 0 .5rem 1.5rem rgba(var(--primary-rgb), 0.1)!important;
+}
+.project-card .card-body {
+     border-left: 4px solid var(--accent-color);
+}
+.blog-card .card-body {
+     border-left: 4px solid var(--secondary-color);
+}
+
+
+/* === Buttons === */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    --bs-btn-hover-bg: #3a438a;
+    --bs-btn-hover-border-color: #3a438a;
+    --bs-btn-active-bg: #3a438a;
+    --bs-btn-active-border-color: #3a438a;
+    padding: 0.5rem 1.25rem; /* Slightly larger padding */
+    font-weight: 500;
+}
+.btn-success { /* Style contact button */
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+     --bs-btn-hover-bg: #E87050; /* Darker Coral */
+    --bs-btn-hover-border-color: #E87050;
+    --bs-btn-active-bg: #E87050;
+    --bs-btn-active-border-color: #E87050;
+    color: white;
+     padding: 0.5rem 1.25rem;
+    font-weight: 500;
+}
+.btn-light { /* Style download button */
+    padding: 0.5rem 1.25rem;
+    font-weight: 500;
+}
+
+
+/* === Footer === */
+footer {
+    background-color: var(--dark-text);
+    color: rgba(255, 255, 255, 0.7);
+}
+footer .nav-link { /* Style footer nav links */
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.2rem; /* Icon size */
+    padding: 0 0.5rem;
+    line-height: normal;
+}
+footer .nav-link:hover {
+    color: rgba(255, 255, 255, 1);
+}
+footer a:not(.nav-link) { /* Style text links in footer */
+  color: inherit; /* Use footer text color */
+  border-bottom: 1px dashed rgba(255,255,255,0.5); /* Dashed underline */
+  text-decoration: none;
+  cursor: pointer;
+}
+footer a:not(.nav-link):hover {
+    color: white;
+    border-bottom-color: white;
+}
+footer .h4{
+    color: white; /* Ensure name is white */
+}
+
+/* === Print Styles (From Original) === */
+@media print {
+  body {
+    background-color: #fff;
+  }
+  .container {
+    width: auto;
+    max-width: 100%;
+    padding: 0;
+  }
+  .cover, .cover-bg {
+    border-radius: 0;
+  }
+  .cover.shadow-lg {
+    box-shadow: none !important;
+  }
+  .cover-bg {
+    padding: 1rem !important; /* Reduced padding for print */
+    padding-bottom: 10px !important;
+    background: none !important; /* Remove bg color/image for print */
+    color: #000 !important; /* Ensure text is black */
+  }
+  .cover-bg .btn { display: none;} /* Hide buttons in cover */
+  .avatar {
+    margin-top: -10px;
+    margin-bottom: 10px; /* Adjust spacing */
+    filter: none !important; /* No grayscale */
+  }
+  .avatar img { filter: none !important; }
+
+  /* Adjust padding for print to avoid excessive whitespace */
+  .about-section,
+  .skills-section,
+  .work-experience-section,
+  .education-section,
+  .projects-section,
+  .accomplishments-section,
+  .certifications-section,
+  .blog-section,
+  .contant-section {
+    padding: 1.5rem 1rem 1rem !important;
+  }
+  .timeline { border-left-color: #ccc; }
+  .timeline-card { margin-left: 20px; padding-left: 15px; border: none; }
+  .timeline-card:before, .timeline-card:after { display: none; } /* Hide timeline graphics */
+
+  section { page-break-inside: avoid; } /* Try to keep sections together */
+
+  .page-break { /* Utility class if manual break needed */
+    padding-top: 5rem;
+    page-break-before: always;
+  }
 }
