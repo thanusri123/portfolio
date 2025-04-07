@@ -84,7 +84,7 @@ a:hover {
 
 /* === Hero Section === */
 .hero-section {
-    min-height: 85vh; /* Make hero section take significant height */
+    min-height: 50vh; /* Make hero section take significant height */
     background: linear-gradient(rgba(var(--primary-rgb), 0.8), rgba(var(--primary-rgb), 0.9)), url('images/hero-bg.jpg'); /* Example background image - REPLACE with your own */
     background-size: cover;
     background-position: center center;
@@ -93,19 +93,19 @@ a:hover {
     padding: 6rem 0;
 }
 .hero-section h1 {
-    font-weight: 600;
+    font-weight: 200;
     color: var(--white-color);
     text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 .hero-section .subtitle {
-    font-size: 1rem;
+    font-size: 1.25rem;
     color: rgba(255, 255, 255, 0.85);
 }
 .hero-section .btn-primary {
     background-color: var(--white-color);
     border-color: var(--white-color);
     color: var(--primary-color);
-    font-weight: 200;
+    font-weight: 600;
 }
 .hero-section .btn-primary:hover {
     background-color: var(--light-color);
