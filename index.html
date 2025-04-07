@@ -16,431 +16,386 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Your Custom CSS -->
     <link rel="stylesheet" href="css/main.css">
 
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body>
 
-    <!-- ==================== Header / Navigation (Using Bootstrap Navbar) ==================== -->
-    <header class="sticky-top shadow-sm">
-        <nav class="navbar navbar-expand-lg navbar-light"> <!-- bg-light removed, background set in CSS -->
+    <!-- ==================== Header / Navigation ==================== -->
+    <header class="main-header sticky-top">
+        <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <!-- Site Title Area (matches original structure better) -->
-                 <div class="site-title">
-                    <a class="navbar-brand" href="#about">Thanu Sri Deshamoni</a>
-                 </div>
-                 <!-- Nav Toggler -->
+                 <a class="navbar-brand" href="#">Thanu Sri Deshamoni</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                 <!-- Main Navigation (matches original structure better) -->
-                 <div class="site-nav collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                         <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
-                         <li class="nav-item">
-                            <a class="nav-link" href="#skills">Skills</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#experience">Experience</a>
-                        </li>
-                         <li class="nav-item">
-                            <a class="nav-link" href="#education">Education</a>
-                         </li>
-                         <li class="nav-item">
-                            <a class="nav-link" href="#projects">Projects</a>
-                        </li>
-                         <li class="nav-item">
-                            <a class="nav-link" href="#accomplishments">Accomplishments</a> <!-- Added -->
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#certifications">Certifications</a> <!-- Added -->
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#blog">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                     <!-- Social Icons -->
-                    <ul class="navbar-nav ms-3 flex-row d-none d-lg-flex"> <!-- Hide on small screens to avoid double list -->
-                        <li class="nav-item"><a class="nav-link ps-2 pe-1" href="https://twitter.com/" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                        <li class="nav-item"><a class="nav-link px-1" href="https://www.linkedin.com/in/thanusrideshamoni/" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                        <li class="nav-item"><a class="nav-link px-1" href="https://www.instagram.com/" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        <li class="nav-item"><a class="nav-link px-1" href="https://github.com/thanusri123" title="Github" target="_blank"><i class="fab fa-github"></i></a></li>
+                 <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                         <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                         <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                         <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
                  </div>
             </div>
         </nav>
     </header>
 
-    <!-- ==================== Main Content (All Sections) ==================== -->
-    <main class="flex-grow-1">
+    <!-- ==================== Main Content ==================== -->
+    <main>
 
-        <!-- === About Section with Cover Effect === -->
-        <section id="about" class="section-bg-white pb-0"> <!-- Removed padding bottom -->
-            <div class="container cover shadow-lg"> <!-- Added cover class -->
-                 <div class="cover-bg p-3 p-lg-4 text-white"> <!-- Added cover-bg -->
-                    <div class="row align-items-center">
-                        <div class="col-lg-4 col-md-5 text-center text-lg-start mb-4 mb-md-0">
-                             <div class="avatar" data-aos="fade-right"> <!-- Added avatar class -->
-                                <img src="images/passport1.jpg" alt="Thanu Sri Deshamoni" class="img-fluid rounded-circle shadow-sm bg-white p-1" width="200" height="200">
-                            </div>
-                        </div>
-                        <div class="col-lg-8 col-md-7 text-center text-lg-start" data-aos="fade-left">
-                            <h1 class="display-4 mt-2">Thanu Sri Deshamoni</h1>
-                            <p class="lead">Software Engineer</p>
-                            <div class="d-print-none">
-                                <a class="btn btn-light text-dark shadow-sm mt-1 me-2" href="DESKTOP IMP _MY_Resume_.pdf" target="_blank" role="button"><i class="fas fa-download me-2"></i>Download CV</a>
-                                <a class="btn btn-success shadow-sm mt-1" href="#contact" role="button">Contact Me</a> <!-- Changed btn style -->
-                             </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- About Me Text Section -->
-                <div class="about-section px-3 px-lg-4 pb-4 pt-5"> <!-- Padding matching original -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h2 class="h3 mb-3">About Me</h2>
-                            <p>Hello! I’m Thanu Sri Deshamoni. I am Self-motivated professional with ability to quickly master new technology to drive process improvements. Strong team player with excellent communication and collaborative abilities.</p>
-                        </div>
-                        <div class="col-md-5 offset-md-1">
-                             <h3 class="h4 mb-3">Details</h3>
-                            <div class="row mt-2">
-                                <div class="col-sm-4">
-                                    <div class="pb-1 fw-bold">Age</div>
-                                </div>
-                                <div class="col-sm-8">
-                                    <div class="pb-1 text-secondary">Your Age</div> <!-- UPDATE AGE -->
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="pb-1 fw-bold">Email</div>
-                                </div>
-                                <div class="col-sm-8">
-                                    <div class="pb-1 text-secondary">your.email@example.com</div> <!-- UPDATE EMAIL -->
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="pb-1 fw-bold">Phone</div>
-                                </div>
-                                <div class="col-sm-8">
-                                    <div class="pb-1 text-secondary">+1 (469) 885-2729</div> <!-- UPDATE PHONE -->
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="pb-1 fw-bold">Address</div>
-                                </div>
-                                <div class="col-sm-8">
-                                    <div class="pb-1 text-secondary">5725 Martin Road Plano, Texas</div> <!-- UPDATE ADDRESS -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                 </div>
-             </div>
+        <!-- === Hero Section === -->
+        <section id="hero" class="hero-section d-flex align-items-center justify-content-center text-center">
+            <div class="container" data-aos="zoom-in">
+                 <!-- Optional: Profile Image Here if desired in Hero -->
+                 <img src="images/passport1.jpg" alt="Thanu Sri Deshamoni" class="hero-image rounded-circle mb-3"> -->
+                <h1 class="display-3">Thanu Sri Deshamoni</h1>
+                <p class="lead subtitle">M.S. Computer Science, Marist College</p>
+                <p class="lead subtitle mb-4">Software Developer | UI/UX Enthusiast | Data Engineer Trainee</p>
+                <a href="DESKTOP IMP _MY_Resume_.pdf" class="btn btn-primary btn-lg me-2" target="_blank" download>
+                    <i class="fas fa-download me-2"></i>Download Resume
+                </a>
+                <a href="#about" class="btn btn-outline-light btn-lg scroll-link">
+                    <i class="fas fa-chevron-down me-2"></i>Click For More
+                </a>
+            </div>
         </section>
 
-        <!-- === Skills Section (Exact HTML from User Request) === -->
-        <section id="skills" class="section-bg-light">
-             <div class="container">
-                <div class="skills-section px-3 px-lg-4 pt-4 pb-4"> <!-- Added padding classes -->
-                    <h2 class="h3 mb-3 text-center">Professional Skills</h2> <!-- Use h3 like original, centered -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-2">
-                            <span>C++</span>
-                            <div class="progress my-1">
-                                <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="100" data-aos-anchor=".skills-section" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-                            </div>
-                            </div>
-                            <div class="mb-2">
-                            <span>C</span>
-                            <div class="progress my-1">
-                                <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="200" data-aos-anchor=".skills-section" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-                            </div>
-                            </div>
-                            <div class="mb-2">
-                            <span>Data Structures</span>
-                            <div class="progress my-1">
-                                <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="300" data-aos-anchor=".skills-section" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-2">
-                            <span>Core Java</span>
-                            <div class="progress my-1">
-                                <div class="progress-bar bg-success" role="progressbar" data-aos="zoom-in-right" data-aos-delay="400" data-aos-anchor=".skills-section" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
-                            </div>
-                            </div>
-                            <div class="mb-2">
-                            <span>Python</span>
-                            <div class="progress my-1">
-                                <div class="progress-bar bg-success" role="progressbar" data-aos="zoom-in-right" data-aos-delay="500" data-aos-anchor=".skills-section" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-                            </div>
-                            </div>
-                            <div class="mb-2">
-                            <span>MySQL</span>
-                            <div class="progress my-1">
-                                <div class="progress-bar bg-success" role="progressbar" data-aos="zoom-in-right" data-aos-delay="600" data-aos-anchor=".skills-section" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-                            </div>
-                            </div>
-                        </div>
+        <!-- === About Me Section === -->
+        <section id="about" class="py-5 section-bg-white">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-lg-10 mx-auto text-center">
+                        <h2 class="section-heading">About Me</h2>
+                         <blockquote class="blockquote fst-italic text-secondary my-4">
+                            <p>"The future belongs to those who believe in the beauty of their dreams."</p>
+                            <footer class="blockquote-footer">Eleanor Roosevelt</footer>
+                         </blockquote>
+
+                        <p class="text-muted lead mb-4">
+                            A collaborative Software Developer and aspiring Data Engineer with a Master's in Computer Science, specializing in Software Development. Experienced in full-stack development (C#, JavaScript, React, Node.js, Java, Python), UI/UX design principles, and data engineering processes (SQL, ETL). Proven ability in QA, technical support, and project coordination within Agile environments. Passionate about building intuitive solutions and leveraging data to drive insights.
+                        </p>
+                        <p class="text-muted">
+                           Seeking challenging roles to apply my diverse technical skillset, including web development, database management, cloud technologies (AWS, Azure, GCP), and software development best practices, to contribute to innovative projects and continuous learning. Eager to enhance user experiences and optimize data workflows.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- === Work Experience Section (Using Timeline Structure) === -->
-        <section id="experience" class="section-bg-white">
-             <div class="container">
-                 <div class="work-experience-section px-3 px-lg-4 pt-4 pb-4">
-                    <h2 class="h3 mb-4 text-center">Work Experience</h2>
-                    <div class="timeline">
+        <!-- === Education Section === -->
+        <section id="education" class="py-5 section-bg-light">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-heading text-center mb-5">Education</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                         <!-- Education Item -->
+                         <div class="education-item mb-4 pb-4 border-bottom">
+                            <h3 class="h5 mb-1">Marist College</h3>
+                            <p class="text-primary fw-bold mb-1">Master of Science in Computer Science</p>
+                            <p class="text-muted small mb-1">Specialization in Software Development</p>
+                            <p class="text-muted small"><i>Graduated May 2023</i></p>
+                            <!-- Add GPA if desired: <p class="text-muted small">GPA: X.X/4.0</p> -->
+                         </div>
+                         <!-- Education Item -->
+                          <div class="education-item">
+                            <h3 class="h5 mb-1">CVR College of Engineering</h3>
+                            <p class="text-primary fw-bold mb-1">Bachelor of Technology</p>
+                            <!-- Add Major if known, e.g., <p class="text-muted small mb-1">Computer Science & Engineering</p> -->
+                            <p class="text-muted small"><i>Graduated May 2021</i></p>
+                             <!-- Add GPA if desired: <p class="text-muted small">GPA: X.X/10.0</p> -->
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === Skills Section === -->
+        <section id="skills" class="py-5 section-bg-white">
+            <div class="container" data-aos="fade-up">
+                 <h2 class="section-heading text-center mb-5">Technical Skills</h2>
+                 <div class="row">
+                     <!-- Programming -->
+                     <div class="col-md-6 col-lg-4 mb-4">
+                         <div class="skill-category p-3 border rounded h-100">
+                            <h3 class="h5 text-primary mb-2"><i class="fas fa-code me-2"></i>Programming Languages</h3>
+                            <p class="small text-muted mb-0">Java, Python, C, JavaScript, SQL, TypeScript</p>
+                         </div>
+                     </div>
+                     <!-- Web Dev -->
+                     <div class="col-md-6 col-lg-4 mb-4">
+                         <div class="skill-category p-3 border rounded h-100">
+                             <h3 class="h5 text-primary mb-2"><i class="fas fa-desktop me-2"></i>Web Development</h3>
+                             <p class="small text-muted mb-0">HTML, CSS, React, Node.js, Django, C#, Bootstrap, jQuery</p>
+                         </div>
+                     </div>
+                     <!-- Databases -->
+                      <div class="col-md-6 col-lg-4 mb-4">
+                         <div class="skill-category p-3 border rounded h-100">
+                            <h3 class="h5 text-primary mb-2"><i class="fas fa-database me-2"></i>Databases</h3>
+                            <p class="small text-muted mb-0">MySQL, MongoDB, SQL Server, PostgreSQL</p>
+                         </div>
+                     </div>
+                     <!-- Tools & Technologies -->
+                      <div class="col-md-6 col-lg-4 mb-4">
+                         <div class="skill-category p-3 border rounded h-100">
+                             <h3 class="h5 text-primary mb-2"><i class="fas fa-tools me-2"></i>Tools & Technologies</h3>
+                             <p class="small text-muted mb-0">Git, Eclipse, Android Studio, Selenium, Power BI, DataBricks, JIRA, Jenkins, Docker, Kubernetes</p>
+                         </div>
+                     </div>
+                     <!-- SDLC -->
+                      <div class="col-md-6 col-lg-4 mb-4">
+                          <div class="skill-category p-3 border rounded h-100">
+                            <h3 class="h5 text-primary mb-2"><i class="fas fa-project-diagram me-2"></i>Software Development</h3>
+                            <p class="small text-muted mb-0">Agile (Scrum, Kanban), OOD, RESTful API Development, Version Control (Git), Unit Testing, CI/CD</p>
+                          </div>
+                     </div>
+                     <!-- UI/UX -->
+                     <div class="col-md-6 col-lg-4 mb-4">
+                          <div class="skill-category p-3 border rounded h-100">
+                             <h3 class="h5 text-primary mb-2"><i class="fas fa-palette me-2"></i>UI/UX Design</h3>
+                             <p class="small text-muted mb-0">UI/UX Best Practices, Responsive Design, Wireframing, Mockups (Figma, Adobe XD), Frontend Development</p>
+                          </div>
+                     </div>
+                     <!-- Data Engineering -->
+                     <div class="col-md-6 col-lg-4 mb-4">
+                          <div class="skill-category p-3 border rounded h-100">
+                            <h3 class="h5 text-primary mb-2"><i class="fas fa-cogs me-2"></i>Data Engineering</h3>
+                            <p class="small text-muted mb-0">Data Integration, ETL Processes, Data Analysis, Data Visualization, Reporting, SQL Query Optimization, Data Modeling</p>
+                          </div>
+                     </div>
+                      <!-- Project Management -->
+                     <div class="col-md-6 col-lg-4 mb-4">
+                          <div class="skill-category p-3 border rounded h-100">
+                            <h3 class="h5 text-primary mb-2"><i class="fas fa-tasks me-2"></i>Project Management</h3>
+                            <p class="small text-muted mb-0">Sprint Planning, Task Tracking (JIRA), Collaboration, Client Requirement Gathering, Cross-functional Team Coordination, Time Management, Documentation</p>
+                          </div>
+                     </div>
+                      <!-- Cloud -->
+                     <div class="col-md-6 col-lg-4 mb-4">
+                           <div class="skill-category p-3 border rounded h-100">
+                            <h3 class="h5 text-primary mb-2"><i class="fas fa-cloud me-2"></i>Cloud Technologies</h3>
+                            <p class="small text-muted mb-0">AWS (EC2, S3), Azure, Google Cloud Platform (GCP)</p>
+                          </div>
+                     </div>
+                     <!-- Soft Skills -->
+                      <div class="col-md-6 col-lg-4 mb-4">
+                           <div class="skill-category p-3 border rounded h-100">
+                             <h3 class="h5 text-primary mb-2"><i class="fas fa-comments me-2"></i>Soft Skills</h3>
+                             <p class="small text-muted mb-0">Problem-Solving, Communication, Leadership, Teamwork, Mentoring, Client-Focused Solutions, Documentation</p>
+                          </div>
+                     </div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- === Work Experience Section === -->
+        <section id="experience" class="py-5 section-bg-light">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-heading text-center mb-5">Work Experience</h2>
+                <div class="row justify-content-center">
+                     <div class="col-lg-10">
                         <!-- Experience Item -->
-                        <div class="timeline-card timeline-card-primary card shadow-sm" data-aos="fade-up">
-                            <div class="card-body">
-                            <div class="h5 mb-1">Intern <span class="text-muted h6">at Talent Integrators</span></div>
-                            <div class="text-muted text-small mb-2">January, 2021 - August, 2021</div>
-                            <div>
-                                <p>• Responsible for handling technical training for new recruits in C/C++/Java/Python as per client requirement </p>
-                                <p>• Analyzing and screen candidates for various positions.</p>
+                        <div class="experience-item mb-5">
+                            <div class="d-flex justify-content-between flex-wrap align-items-center mb-2">
+                                <h3 class="h5 mb-0 me-3">Software Developer</h3>
+                                <span class="text-primary fw-bold">June 2024 – Present</span>
                             </div>
-                            </div>
+                            <h4 class="h6 text-muted mb-3">Eshift Inc.</h4>
+                            <ul class="list-unstyled small text-muted">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Collaborate with the development team to create responsive and visually appealing user interfaces.</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Assist in the implementation of frontend solutions using modern technologies such as C# and JavaScript, ensuring the best practices for UI/UX design.</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Participate in design discussions to provide input and insights on user experience improvements.</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Design, code, test, debug, maintain, and document programs for web applications and software tools.</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Contribute to the planning and development of project solutions based on client requirements and business objectives.</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Develop and optimize web applications, ensuring alignment with project timelines and goals.</li>
+                            </ul>
                         </div>
                          <!-- Experience Item -->
-                        <div class="timeline-card timeline-card-primary card shadow-sm" data-aos="fade-up" data-aos-delay="100">
-                            <div class="card-body">
-                                <div class="h5 mb-1">System Engineer <span class="text-muted h6">at Infosys Ltd, Bangalore</span></div>
-                                <div class="text-muted text-small mb-2">February, 2019 - February, 2020</div>
-                                <div>
-                                    <p>• Responsible for development and enhancement in Media Gateway (MGCF) product.</p>
-                                    <p>• Responsible for new feature development and bug fixes on SIP (Session Initiation Protocol) for Media Gateway Product.</p>
-                                    <p>• Exposed to structures pointers in C++ along with memory management in C++.</p>
-                                    <p>• Worked on SIP stack and SIP parser to parse new headers in SIP messages.</p>
-                                    <p>• Gained experience in field of networking and telecommunication.</p>
-                                </div>
+                        <div class="experience-item mb-5">
+                            <div class="d-flex justify-content-between flex-wrap align-items-center mb-2">
+                                <h3 class="h5 mb-0 me-3">Data Engineer Trainee</h3>
+                                <span class="text-primary fw-bold">Aug 2023 – June 2024</span>
                             </div>
+                            <h4 class="h6 text-muted mb-3">IT Gateway</h4>
+                            <ul class="list-unstyled small text-muted">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Gathered and meticulously document functional requirements for IT Gateway projects.</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Delivered comprehensive training status updates regularly during daily standup meetings.</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Integrated data from various sources using SQL, generating extensive data sets and reports tailored to meet the needs of end users.</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Skillfully tracked project tasks in JIRA, ensuring timely completion and adherence to project timelines.</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Collaborated closely with project coordinators to understand flow designs and implement solutions.</li>
+                             </ul>
                         </div>
-                         <!-- Add other experience items in timeline-card divs -->
+                         <!-- Experience Item -->
+                        <div class="experience-item mb-5">
+                            <div class="d-flex justify-content-between flex-wrap align-items-center mb-2">
+                                <h3 class="h5 mb-0 me-3">Technical Support Consultant, Quality Assurance Analyst</h3>
+                                <span class="text-primary fw-bold">July 2022 - May 2023</span>
+                            </div>
+                            <h4 class="h6 text-muted mb-3">Marist College</h4>
+                            <ul class="list-unstyled small text-muted">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Conducted validation testing for Learn Management System upgrades, resulting in improved system functionality.</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Performed software risk assessments alongside a global technical community(Sakai) to identify potential issues and ensure optimal LMS performance.</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Led the QA team, fostering a collaborative environment with technical professionals and student colleagues and contributing to streamlined testing processes.</li>
+                            </ul>
+                        </div>
+                         <!-- Experience Item -->
+                        <div class="experience-item">
+                            <div class="d-flex justify-content-between flex-wrap align-items-center mb-2">
+                                <h3 class="h5 mb-0 me-3">Intern – Pre Education Program (PEP)</h3>
+                                <span class="text-primary fw-bold">Jan 2020 - Jun 2020</span>
+                            </div>
+                            <h4 class="h6 text-muted mb-3">EPAM Systems</h4>
+                             <ul class="list-unstyled small text-muted">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Participated in team meetings and discussions, gaining insights into Agile development methodologies.</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Acquired knowledge in software engineering principles, object-oriented design, and quality assurance processes.</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Actively engaged in learning opportunities, attending webinars and workshops to expand technical skills.</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Attended Pre Education Program (PEP) conducted by EPAM Systems India Pvt Ltd, participating in 13 online webinars covering beginner-level modules on various software engineering topics.</li>
+                             </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- === Education Section (Using Timeline Structure) === -->
-        <section id="education" class="section-bg-light">
-            <div class="container">
-                 <div class="education-section px-3 px-lg-4 pt-4 pb-4">
-                    <h2 class="h3 mb-4 text-center">Education</h2>
-                    <div class="timeline">
-                        <!-- Education Item -->
-                        <div class="timeline-card timeline-card-success card shadow-sm" data-aos="fade-up">
-                            <div class="card-body">
-                            <div class="h5 mb-1">Master of Science in Computer Science</div>
-                            <div class="text-muted h6">University of Texas, Arlington</div>
-                            <div class="text-muted text-small mb-2">2021 - Present</div>
-                            </div>
-                        </div>
-                        <!-- Education Item -->
-                         <div class="timeline-card timeline-card-success card shadow-sm" data-aos="fade-up" data-aos-delay="100">
-                            <div class="card-body">
-                            <div class="h5 mb-1">Bachelors of Technology in Electronics and Communication Engineering</div>
-                             <div class="text-muted h6">Banasthali Vidyapith, Jaipur - Rajasthan</div>
-                            <div class="text-muted text-small mb-2">2014 - 2018</div>
-                            </div>
-                        </div>
-                        <!-- Add other education items -->
-                    </div>
-                 </div>
-            </div>
-        </section>
-
-        <!-- === Projects Section (Using Simple Cards for Variety) === -->
-        <section id="projects" class="section-bg-white">
-            <div class="container">
-                 <div class="projects-section px-3 px-lg-4 pt-4 pb-4">
-                    <h2 class="h3 mb-4 text-center">Projects</h2>
-                    <div class="row">
-                         <!-- Project Item -->
-                         <div class="col-md-6 mb-4" data-aos="fade-up">
-                             <div class="card project-card shadow-sm h-100"> <!-- Added h-100 for equal height -->
-                                 <div class="card-body">
-                                     <h5 class="card-title">Web Application on Attendance Tracking System</h5>
-                                     <h6 class="card-subtitle mb-2 text-muted">Banasthali Vidyapith, Rajasthan, India</h6>
-                                     <p class="card-text small">Designed and developed website for attendance tracking with features including Attendance management as well as viewing whole day schedule for faculty as well as students, reducing the paperwork and making it time efficient.</p>
-                                     <!-- <a href="#" class="card-link small">Details</a> -->
-                                 </div>
-                             </div>
-                         </div>
-                         <!-- Add more project items in col-md-6 divs -->
-                         <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                             <div class="card project-card shadow-sm h-100">
-                                 <div class="card-body">
-                                     <h5 class="card-title">Diabetes Prediction Model</h5>
-                                     <h6 class="card-subtitle mb-2 text-muted">Machine Learning Project</h6>
-                                     <p class="card-text small">Analysis and implementation of supervised learning models (Logistic Regression, KNN, Random Forest, SVM) to predict diabetes, including hyperparameter tuning using GridSearchCV.</p>
-                                     <!-- <a href="blog_posts/Main_Project.html" class="card-link small">Blog Post</a> -->
-                                 </div>
-                             </div>
-                         </div>
+        <!-- === Technical Projects Section === -->
+        <section id="projects" class="py-5 section-bg-white">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-heading text-center mb-5">Technical Projects</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <ul class="list-group list-group-flush">
+                           <li class="list-group-item d-flex justify-content-between align-items-center">
+                               <div>
+                                   <h3 class="h6 mb-1">User-Customizable Product Design Website and Application with Payment Integration</h3>
+                                   <p class="small text-muted mb-0">Capstone Project - Engineered a user-friendly platform enabling bespoke product creation, elevating customer satisfaction by 20%.</p>
+                               </div>
+                               <!-- Optional: Add link icon if you have a link -->
+                               <!-- <a href="#" target="_blank" title="View Project"><i class="fas fa-external-link-alt text-primary"></i></a> -->
+                           </li>
+                           <!-- Add more projects as list-group-items here -->
+                           <!-- Example:
+                           <li class="list-group-item d-flex justify-content-between align-items-center">
+                               <div>
+                                   <h3 class="h6 mb-1">Another Project Title</h3>
+                                   <p class="small text-muted mb-0">Brief description of the project and technologies used.</p>
+                               </div>
+                               <a href="#" target="_blank" title="View Project"><i class="fas fa-external-link-alt text-primary"></i></a>
+                           </li>
+                           -->
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-         <!-- === Accomplishments Section (Using Timeline Structure) === -->
-         <section id="accomplishments" class="section-bg-light">
-             <div class="container">
-                <div class="accomplishments-section px-3 px-lg-4 pt-4 pb-4">
-                    <h2 class="h3 mb-4 text-center">Accomplishments</h2>
-                     <div class="timeline">
-                         <div class="timeline-card timeline-card-success card shadow-sm" data-aos="fade-up">
-                             <div class="card-body">
-                                <ul class="list-unstyled mb-0 text-secondary"> <!-- Use list for semantics -->
-                                   <li class="mb-2"><i class="fas fa-trophy text-warning me-2"></i>Winner of Hackathon at Infosys...</li>
-                                   <li class="mb-2"><i class="fas fa-trophy text-warning me-2"></i>First position in ‘Robo Race’...</li>
-                                   <li class="mb-2"><i class="fas fa-medal text-info me-2"></i>Member of National Service Scheme(NSS)</li>
-                                    <!-- Add other accomplishments -->
-                                </ul>
+        <!-- === Certifications Section === -->
+         <section id="certifications" class="py-5 section-bg-light">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-heading text-center mb-5">Certifications</h2>
+                 <div class="row text-center">
+                     <!-- Certification Item -->
+                     <div class="col-md-6 col-lg-3 mb-4">
+                          <div class="p-3">
+                             <div class="icon-circle bg-primary text-white mb-2 mx-auto">
+                                <i class="fab fa-salesforce"></i>
+                             </div>
+                             <p class="mb-0 small fw-bold">Salesforce Certified Administrator</p>
+                             <p class="small text-muted">(Expected March 2025)</p>
+                         </div>
+                     </div>
+                     <!-- Certification Item -->
+                     <div class="col-md-6 col-lg-3 mb-4">
+                          <div class="p-3">
+                             <div class="icon-circle bg-secondary text-white mb-2 mx-auto">
+                                <i class="fas fa-chalkboard-teacher"></i>
                             </div>
+                             <p class="mb-0 small fw-bold">Pre-Education Program (PEP 2022)</p>
+                             <p class="small text-muted">EPAM Systems (Jun 2020)</p>
+                         </div>
+                     </div>
+                      <!-- Certification Item -->
+                     <div class="col-md-6 col-lg-3 mb-4">
+                         <div class="p-3">
+                             <div class="icon-circle bg-info text-white mb-2 mx-auto">
+                                 <i class="fab fa-ibm"></i>
+                            </div>
+                             <p class="mb-0 small fw-bold">IBM Enterprise Design Thinking Practitioner</p>
+                             <p class="small text-muted">(Feb 2023)</p>
+                          </div>
+                     </div>
+                      <!-- Certification Item -->
+                     <div class="col-md-6 col-lg-3 mb-4">
+                         <div class="p-3">
+                             <div class="icon-circle bg-warning text-dark mb-2 mx-auto">
+                                <i class="fas fa-user-cog"></i>
+                             </div>
+                             <p class="mb-0 small fw-bold">Data Processing Specialist, Software Development Trainee</p>
+                             <p class="small text-muted">Aspiring Minds (Jan 2021)</p>
                          </div>
                      </div>
                  </div>
-             </div>
+            </div>
         </section>
 
-        <!-- === Certifications Section (Using Timeline Structure) === -->
-         <section id="certifications" class="section-bg-white">
-             <div class="container">
-                <div class="certifications-section px-3 px-lg-4 pt-4 pb-4">
-                    <h2 class="h3 mb-4 text-center">Certifications</h2>
-                     <div class="timeline">
-                         <div class="timeline-card timeline-card-primary card shadow-sm" data-aos="fade-up">
-                             <div class="card-body">
-                                <h5 class="h6 mb-1">Diploma in ASP.NET</h5>
-                                <div class="text-muted text-small">July 2016 - April 2017</div>
-                             </div>
-                         </div>
-                         <!-- Add more certifications -->
-                     </div>
-                 </div>
-             </div>
-        </section>
-
-        <!-- === Blog Section (Using Simple Cards) === -->
-        <section id="blog" class="section-bg-light">
-            <div class="container">
-                 <div class="blog-section px-3 px-lg-4 pt-4 pb-4">
-                    <h2 class="h3 mb-4 text-center">Blog</h2>
-                    <div class="row">
-                        <!-- Blog Post Summary Card 1 -->
-                        <div class="col-md-6 mb-4" data-aos="fade-up">
-                            <div class="card blog-card shadow-sm h-100">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title h6">Titanic - Machine Learning Disaster</h5>
-                                    <p class="card-text text-muted small flex-grow-1">Discussing the Kaggle tutorial for the Titanic data set, with additional contributions using Logistic Regression and Random Forest Classifier...</p>
-                                    <a href="blog_posts/titanic_blog.html" class="btn btn-sm btn-outline-secondary mt-auto align-self-start">Read More <i class="fas fa-arrow-right ms-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Add other blog cards -->
-                        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                             <div class="card blog-card shadow-sm h-100">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title h6">CIFAR-10 - Image Classifier</h5>
-                                    <p class="card-text text-muted small flex-grow-1">Image classification on the CIFAR-10 dataset using PyTorch, exploring different network architectures...</p>
-                                    <a href="blog_posts/Pytorch_Assignment2.html" class="btn btn-sm btn-outline-secondary mt-auto align-self-start">Read More <i class="fas fa-arrow-right ms-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ... more blog cards ... -->
+        <!-- === Leadership / Volunteer Section === -->
+        <section id="leadership" class="py-5 section-bg-white">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-heading text-center mb-5">Leadership & Activities</h2>
+                 <div class="row justify-content-center">
+                     <div class="col-lg-8">
+                        <ul class="list-group list-group-flush">
+                           <li class="list-group-item">
+                               <h3 class="h6 mb-1">Capstone Project - Fellow</h3>
+                               <p class="small text-muted mb-0">User-Customizable Product Design Website and Application - Gathered requirements, contributed to design ensuring user needs alignment.</p>
+                           </li>
+                            <li class="list-group-item">
+                               <h3 class="h6 mb-1">Digital Education – Student Employee (Fellow)</h3>
+                               <p class="small text-muted mb-0">Provided leadership as head of the QA team, fostering collaboration and streamlining testing processes. Led scripting sessions and contributed in meetings for Sakai LMS.</p>
+                           </li>
+                           <!-- Add more activities if needed -->
+                        </ul>
                     </div>
                 </div>
-             </div>
+            </div>
         </section>
 
         <!-- === Contact Section === -->
-        <section id="contact" class="section-bg-white">
-            <div class="container">
-                 <div class="contant-section px-3 px-lg-4 pt-4 pb-4"> <!-- Class from original -->
-                    <h2 class="h3 mb-4 text-center">Get In Touch</h2>
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                            <div class="row">
-                                <!-- Contact Form -->
-                                <div class="col-md-7 mb-4 mb-md-0" data-aos="fade-right">
-                                    <h3 class="h5 mb-3">Send a Message</h3>
-                                    <form action="https://formspree.io/f/mnnpopye" method="POST">
-                                        <div class="mb-3">
-                                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <input type="email" class="form-control" id="email" name="_replyto" placeholder="Your E-mail" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane me-2"></i>Send</button>
-                                    </form>
-                                </div>
-                                <!-- Contact Details -->
-                                <div class="col-md-5" data-aos="fade-left" data-aos-delay="100">
-                                     <h3 class="h5 mb-3">Contact Information</h3>
-                                     <div class="d-flex mb-3 align-items-start">
-                                         <i class="fas fa-map-marker-alt fa-fw mt-1 me-3 text-primary"></i>
-                                         <div>
-                                             <strong>Address</strong><br>
-                                             <span class="text-secondary">5725 Martin Road<br>Plano, Texas</span>
-                                         </div>
-                                     </div>
-                                      <div class="d-flex mb-3 align-items-start">
-                                         <i class="fas fa-phone fa-fw mt-1 me-3 text-primary"></i>
-                                         <div>
-                                             <strong>Phone</strong><br>
-                                             <span class="text-secondary">+1 (469) 885-2729</span>
-                                         </div>
-                                     </div>
-                                     <div class="d-flex mb-3 align-items-start">
-                                         <i class="fas fa-envelope-open-text fa-fw mt-1 me-3 text-primary"></i>
-                                         <div>
-                                             <strong>Email</strong><br>
-                                             <a href="mailto:your.email@example.com" class="text-secondary">your.email@example.com</a><!-- UPDATE EMAIL -->
-                                         </div>
-                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <section id="contact" class="py-5 section-bg-dark text-white text-center">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-heading mb-4">Contact Me</h2>
+                <p class="lead mb-4">Feel free to reach out via email or connect on LinkedIn.</p>
+                 <div class="mb-4">
+                    <i class="fas fa-envelope fa-2x text-primary mb-2"></i><br>
+                    <a href="mailto:deshamonithanusri06@gmail.com" class="text-white fs-5">deshamonithanusri06@gmail.com</a>
+                 </div>
+                 <div class="mb-4">
+                     <i class="fas fa-phone fa-2x text-primary mb-2"></i><br>
+                     <a href="tel:+18454849756" class="text-white fs-5">845-484-9756</a>
+                 </div>
+                 <div>
+                     <a href="https://www.linkedin.com/in/thanusri-deshamoni" class="btn btn-outline-light me-2" target="_blank">
+                        <i class="fab fa-linkedin me-2"></i>LinkedIn
+                    </a>
+                     <a href="https://github.com/thanusri123" class="btn btn-outline-light" target="_blank">
+                        <i class="fab fa-github me-2"></i>GitHub
+                     </a>
+                 </div>
             </div>
         </section>
 
     </main>
 
     <!-- ==================== Footer ==================== -->
-    <footer class="pt-4 pb-4 text-muted text-center d-print-none mt-auto"> <!-- Class from original -->
+    <footer class="py-4 bg-black text-white-50 text-center small">
         <div class="container">
-            <div class="my-3">
-              <div class="h4">Thanu Sri Deshamoni</div>
-              <div class="footer-nav">
-                <nav role="navigation">
-                  <ul class="nav justify-content-center">
-                    <li class="nav-item"><a class="nav-link" href="https://twitter.com/" title="Twitter" target="_blank"><i class="fab fa-twitter"></i><span class="menu-title sr-only">Twitter</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/thanusrideshamoni/" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i><span class="menu-title sr-only">LinkedIn</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/" title="Instagram" target="_blank"><i class="fab fa-instagram"></i><span class="menu-title sr-only">Instagram</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://github.com/thanusri123" title="Github" target="_blank"><i class="fab fa-github"></i><span class="menu-title sr-only">Github</span></a></li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-            <div class="text-small">
-              <div class="mb-1">© Thanu Sri Deshamoni. All rights reserved.</div>
-               <!-- Optional: Add template credit if desired -->
-               <!-- <div>Design - <a href="https://templateflip.com/" target="_blank">TemplateFlip</a></div> -->
-            </div>
+             © Thanu Sri Deshamoni. All rights reserved.
         </div>
     </footer>
 
@@ -448,7 +403,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script> <!-- Ensure this contains AOS init and smooth scroll -->
 
 </body>
 </html>
