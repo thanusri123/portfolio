@@ -1,44 +1,54 @@
-/* css/main.css */
+/* css/main.css - Light Theme (Indigo/Coral) - CORRECTED */
 :root {
-    /* === COLOR PALETTE (Adjust as desired) === */
-    --primary-color: #4A55A2; /* Indigo */
+    /* === COLOR PALETTE === */
+    --primary-color: #4A55A2;
+    /* Indigo */
     --primary-rgb: 74, 85, 162;
-    --secondary-color: #6c757d; /* Gray */
-    --dark-color: #343a40; /* Dark Gray */
-    --light-color: #f8f9fa; /* Light Gray */
-    --white-color: #FFFFFF;
-    --success-color: #198754; /* Bootstrap Green */
-    --info-color: #0dcaf0; /* Bootstrap Cyan */
-    --warning-color: #ffc107; /* Bootstrap Yellow */
-
-    /* === Backgrounds === */
-    --bg-light-shade: #F8F7FC; /* Light base background */
+    --secondary-color: #6c757d;
+    /* Gray */
+    --accent-color: #FF896A;
+    /* Coral (Not
+used much in this version, but available) */
+    --success-color: #198754;
+    /* Bootstrap Green */
+    --info-color: #0dcaf0;
+    /* Bootstrap Cyan */
+    --warning-color: #ffc107;
+    /* Bootstrap Yellow */
+    /* Backgrounds */
+    --bg-light-shade: #F8F7FC;
     --bg-white-shade: #FFFFFF;
-    --bg-dark-shade: #212529; /* Dark background for sections */
-
-    /* === Text === */
+    /* Text & Borders */
     --dark-text: #343a40;
     --muted-text: #6c757d;
-    --light-text: #f8f9fa;
+    --light-border: #e3e3f3;
 }
 
 /* === Base & Typography === */
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: var(--dark-text);
+    color:
+        var(--dark-text);
     background-color: var(--bg-light-shade);
-    padding-top: 56px; /* Add padding matching navbar height to prevent overlap */
+    padding-top: 56px;
+    /* Adjust if navbar height changes */
+    line-height: 1.6;
 }
 
 main {
     flex-grow: 1;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
 }
@@ -47,144 +57,212 @@ h2.section-heading {
     font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 3rem;
+    text-align: center;
+    /* Center section headings */
 }
 
 a {
-  color: var(--primary-color);
-  text-decoration: none;
-}
-a:hover {
-  color: #3a438a;
-  text-decoration: underline;
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
+a:hover {
+    color: #3a438a;
+    text-decoration: underline;
+}
+
+p {
+    color: var(--muted-text);
+    font-weight: 400;
+}
 
 /* === Header / Navigation === */
 .main-header {
-     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-     background-color: var(--white-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    background-color: var(--bg-white-shade);
+    border-bottom: 1px solid var(--light-border);
 }
+
 .navbar-brand {
-     font-family: 'Poppins', sans-serif;
-     font-weight: 600;
-     color: var(--dark-text) !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--dark-text) !important;
 }
+
 .navbar-nav .nav-link {
     color: var(--muted-text);
     font-weight: 500;
     padding: 0.5rem 1rem;
     transition: color 0.2s ease;
+    border-radius: 4px;
 }
+
 .navbar-nav .nav-link:hover,
-.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:focus {
+    color: var(--primary-color) !important;
+}
+
 .navbar-nav .nav-link.active {
-     color: var(--primary-color) !important;
-     font-weight: 600;
+    color: var(--primary-color) !important;
+    font-weight: 600;
+}
+
+.navbar-toggler {
+    border-color: rgba(var(--primary-rgb), 0.3);
 }
 
 /* === Hero Section === */
 .hero-section {
-    min-height: 50vh; /* Make hero section take significant height */
-    background: linear-gradient(rgba(var(--primary-rgb), 0.8), rgba(var(--primary-rgb), 0.9)), url('images/hero-bg.jpg'); /* Example background image - REPLACE with your own */
+    min-height: 85vh;
+    /* Reduced height slightly */
+    /* Use a high-quality LIGHT/abstract background image */
+    background:
+        linear-gradient(rgba(var(--primary-rgb), 0.7), rgba(var(--primary-rgb), 0.8)), url('../images/hero-bg-light.jpg');
+    /* REPLACE with light hero bg */
     background-size: cover;
     background-position: center center;
-    background-attachment: fixed; /* Parallax effect */
-    color: var(--white-color);
+    /* background-attachment: fixed;
+    */
+    /* REMOVED: Prevents excessive scaling perception */
+    color: var(--bg-white-shade);
     padding: 6rem 0;
 }
-.hero-section h1 {
-    font-weight: 200;
-    color: var(--white-color);
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+
+/* === PROFILE PICTURE STYLING & RESPONSIVENESS === */
+.hero-section .hero-image {
+    width: 180px;
+    /* Base width */
+    height: 180px;
+    /*
+    Base height */
+    object-fit: cover;
+    /* Scale image nicely */
+    border: 4px solid rgba(255, 255, 255, 0.7);
+    /* White border */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    /* Soft shadow */
+    margin-left: auto;
+    /* Center */
+    margin-right: auto;
+    display: block;
+    /* border-radius is handled by Bootstrap's .rounded-circle class */
 }
+
+/* Media Queries to make image smaller on smaller screens */
+@media (max-width: 767.98px) {
+
+    /* Below Medium */
+    .hero-section .hero-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 575.98px) {
+
+    /* Below Small */
+    .hero-section .hero-image {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* === END PROFILE PICTURE STYLING === */
+.hero-section h1 {
+    font-weight: 600;
+    color: var(--bg-white-shade);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
 .hero-section .subtitle {
     font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
 }
+
+/* Hero Buttons */
 .hero-section .btn-primary {
-    background-color: var(--white-color);
-    border-color: var(--white-color);
+    /* Download button */
+    background-color:
+        var(--bg-white-shade);
+    border-color: var(--bg-white-shade);
     color: var(--primary-color);
     font-weight: 600;
+    padding: 0.6rem 1.25rem;
 }
+
 .hero-section .btn-primary:hover {
-    background-color: var(--light-color);
-    border-color: var(--light-color);
+    background-color: rgba(255, 255, 255, 0.85);
+    border-color: rgba(255,
+            255, 255, 0.85);
+}
+
+.hero-section .btn-outline-light {
+    /* More button */
+    color: var(--bg-white-shade);
+    border-color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+    padding: 0.6rem 1.25rem;
+}
+
+.hero-section .btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--bg-white-shade);
+    color: var(--bg-white-shade);
 }
 
 /* === Section Backgrounds & Padding === */
 .section-bg-white {
     background-color: var(--bg-white-shade);
 }
+
 .section-bg-light {
     background-color: var(--bg-light-shade);
 }
-.section-bg-dark {
-     background-color: var(--bg-dark-shade);
-}
+
 section {
-    padding: 5rem 0; /* Consistent padding for all sections */
+    padding: 5rem 0;
+    border-top: 1px solid var(--light-border);
 }
 
-/* === About Section === */
-#about .blockquote {
-     border-left: 3px solid var(--primary-color);
-     padding-left: 1rem;
+#hero+section {
+    border-top: none;
 }
 
-/* === Education Section === */
-.education-item h3 {
+/* === Shared Content Styling === */
+.border {
+    border-color: var(--light-border) !important;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.text-muted {
+    color: var(--muted-text) !important;
+}
+
+.text-secondary {
+    color: var(--muted-text) !important;
+}
+
+.list-group-item {
+    background-color: transparent;
+    border-color: var(--light-border);
     color: var(--dark-text);
 }
-.education-item:not(:last-child) {
-    border-bottom: 1px solid #eee; /* Subtle separator */
+
+.blockquote {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1rem;
+    color: var(--muted-text);
 }
 
-/* === Skills Section === */
-.skill-category {
-    background-color: var(--white-color);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-.skill-category:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 .4rem 1rem rgba(var(--primary-rgb), 0.1)!important;
-}
-.skill-category h3 i { /* Style icon */
-    margin-right: 0.75rem;
-    font-size: 1.1em;
+.blockquote-footer {
+    color: var(--muted-text);
     opacity: 0.8;
 }
 
-/* === Experience Section === */
-.experience-item h3 {
-    color: var(--dark-text);
-}
-.experience-item h4 {
-     font-weight: 400; /* Lighter weight for company name */
-}
-.experience-item ul li i { /* Checkmark icon */
-     width: 1.2em; /* Ensure consistent alignment */
-     opacity: 0.8;
-}
-
-/* === Projects Section === */
-#projects .list-group-item {
-     background: none; /* Transparent background for list items */
-     border-bottom: 1px solid #eee !important; /* Add separator */
-     padding-left: 0;
-     padding-right: 0;
-}
-#projects .list-group-item:last-child {
-    border-bottom: none !important;
-}
-#projects .list-group-item h3 {
-    color: var(--dark-text);
-}
-#projects .list-group-item a i {
-     font-size: 0.9rem;
-}
-
-/* === Certifications Section === */
 .icon-circle {
     width: 60px;
     height: 60px;
@@ -196,63 +274,285 @@ section {
     margin-bottom: 0.5rem;
 }
 
+/* === Skills Section === */
+.skill-category {
+    background-color:
+        var(--bg-white-shade);
+    border: 1px solid var(--light-border);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.skill-category:hover {
+    transform:
+        translateY(-5px);
+    box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.08);
+}
+
+.skill-category h3 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.skill-category h3 i {
+    margin-right: 0.75rem;
+    font-size: 1.1em;
+    opacity:
+        0.8;
+}
+
+.skill-category p {
+    color: var(--muted-text);
+    font-size: 0.9rem;
+}
+
+/* === Experience Section === */
+.experience-item {
+    padding: 1.5rem;
+    border-left: 3px solid var(--primary-color);
+    background-color: var(--bg-white-shade);
+    border-radius: 5px;
+    margin-bottom: 2rem !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.experience-item h3 {
+    color: var(--dark-text);
+    font-size: 1.2rem;
+}
+
+.experience-item h4 {
+    font-weight: 400;
+    color: var(--muted-text);
+    font-size:
+        1rem;
+}
+
+.experience-item .fw-bold {
+    color: var(--primary-color) !important;
+}
+
+.experience-item ul {
+    margin-bottom: 0;
+}
+
+.experience-item ul li i {
+    color: var(--primary-color);
+    /* Changed checkmark to primary */
+    opacity: 0.7;
+    width: 1.2em;
+}
+
+/* === Education Section === */
+.education-item {
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--light-border);
+}
+
+.education-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.education-item h3 {
+    color: var(--dark-text);
+    font-size: 1.2rem;
+}
+
+.education-item .fw-bold {
+    color: var(--primary-color) !important;
+}
+
+/* === Projects Section === */
+#projects .list-group-item {
+    background: none;
+    border-bottom: 1px solid var(--light-border) !important;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#projects .list-group-item:last-child {
+    border-bottom: none !important;
+}
+
+#projects .list-group-item h3 {
+    color: var(--dark-text);
+}
+
+/* === Certifications Section === */
+#certifications .fw-bold {
+    color: var(--dark-text);
+}
+
+/* Use bootstrap bg colors for icon circles e.g. bg-primary, bg-secondary etc in HTML */
 /* === Contact Section === */
-#contact .section-heading {
-    color: var(--white-color);
-}
 #contact a {
-    color: var(--white-color);
-    text-decoration: none;
-    transition: opacity 0.2s ease;
+    color: var(--muted-text);
 }
+
 #contact a:hover {
-     opacity: 0.8;
-     text-decoration: none;
+    color:
+        var(--primary-color);
 }
-#contact .btn-outline-light {
-     border-width: 2px;
+
+#contact i {
+    color: var(--primary-color);
+    width: 1.5em;
+}
+
+#contact .btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+#contact .btn-outline-primary:hover {
+    background-color:
+        var(--primary-color);
+    color: var(--bg-white-shade);
+}
+
+#contact .btn-outline-secondary {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+#contact .btn-outline-secondary:hover {
+    background-color: var(--secondary-color);
+    color: var(--bg-white-shade);
 }
 
 /* === Footer === */
 footer {
-     background-color: #000; /* Black footer */
+    background-color: var(--bg-light-shade);
+    border-top: 1px solid var(--light-border);
+    color: var(--muted-text);
 }
 
-/* === AOS Animation adjustments (optional) === */
-[data-aos] {
-     /* Add specific styles if needed, e.g., ensuring visibility */
+footer a {
+    color: var(--muted-text);
 }
 
+footer a:hover {
+    color:
+        var(--primary-color);
+}
 
-/* === Print Styles (Optional - Add if needed) === */
+/* === Responsive (Keep image size adjustments) === */
+@media (max-width: 767.98px) {
+    body {
+        padding-top: 58px;
+    }
+
+    .hero-section {
+        padding: 4rem 0;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+
+    .hero-section .btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    h2.section-heading {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 3.5rem 0;
+    }
+}
+
+/* Print Styles */
 @media print {
-  body {
-    background-color: #fff;
-    padding-top: 0; /* Remove padding for print */
-  }
-  header, footer, #hero .btn {
-    display: none !important; /* Hide header, footer, hero buttons */
-  }
-  section {
-      padding: 1.5rem 0 !important;
-      page-break-inside: avoid;
-  }
-  .hero-section {
-      min-height: auto;
-      background: none !important;
-      color: var(--dark-text);
-      padding: 2rem 0 !important;
-      text-align: left !important;
-  }
-   .hero-section h1, .hero-section p {
-        color: var(--dark-text) !important;
+    body {
+        background: #fff !important;
+        color: #000 !important;
+        padding-top: 0;
+    }
+
+    header,
+    footer,
+    .hero-section .btn {
+        display: none !important;
+    }
+
+    section {
+        padding: 1.5rem 0 !important;
+        page-break-inside: avoid;
+        border: none !important;
+        background: none !important;
+    }
+
+    .hero-section {
+        min-height: auto;
+        background: none !important;
+        color: #000 !important;
+        padding: 1rem 0 !important;
+        text-align: left !important;
+    }
+
+    .hero-section .hero-image {
+        display: none !important;
+    }
+
+    .hero-section h1,
+    .hero-section p {
+        color: #000 !important;
         text-shadow: none !important;
-   }
-  h2.section-heading {
-      font-size: 1.5rem;
-      text-align: left !important;
-      margin-bottom: 1rem !important;
-      border-bottom: 1px solid #ccc;
-  }
-  /* Add other print-specific styles */
+    }
+
+    h2.section-heading {
+        font-size: 1.5rem;
+        text-align: left !important;
+        margin-bottom: 1rem !important;
+        border-bottom: 1px solid #ccc;
+        color: #000 !important;
+    }
+
+    p,
+    .text-muted,
+    .text-secondary,
+    .small {
+        color: #333 !important;
+    }
+
+    .skill-category,
+    .experience-item {
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .list-group-item {
+        border:
+            none !important;
+        padding: 0.25rem 0 !important;
+    }
+
+    a {
+        color: inherit !important;
+        text-decoration: none !important;
+    }
+
+    .text-primary,
+    .text-success,
+    var(--accent-color) {
+        color: #000 !important;
+    }
+
+    .icon-circle {
+        display: none;
+    }
 }
